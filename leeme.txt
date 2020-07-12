@@ -1,0 +1,61 @@
+RM+SOFT GS v1.0
+Sistema de Galérias Fotográficas en línea
+
+****************************
+DESCRIPCION
+****************************
+
+RM+Soft Gallery System es un sistema de galerías fotográficas que te permite la organización
+de tus fotografías en distintas categorías y subcategorías, además te da la posibilidad
+de controlar el acceso a tus categorías dependiendo del status del usuario.
+
+Puedes asignar permisos para que los usuarios puedan publicar sus propias fotografías.
+
+****************************
+INSTALACIÓN
+****************************
+
+1. Sube el directorio "rmgallery" contenido en el archivo ZIP a tu directorio "modules" de
+xoops.
+
+2. Otorga permisos de escritura (chmod 777) al directorio "uploads" del módulo. Si no haces
+esto no funcionará la carga de imágenes. (Sin embargo si funcionaran las imágenes pasadas
+como url).
+
+3. Instala el módulo en el panel de control de XOOPS.
+
+4. Establece las preferencias del módulo
+
+****************************
+ACTUALIZACIÓN
+****************************
+Para actualizar la versión 1.0 -> 1.1 simplemente sobreescribe los archivos existentes
+en tu sitio con los del contenido del archivo zip.
+
+Ve al panel de control y actualiza el módulo.
+
+****************************
+LOG DE CAMBIOS
+****************************
+- Se corrigio un error de permisos para el envio de E-Cards cuando se daba acceso a
+usuarios anonimos. No permitia a los usuarios enonimos enviar E-Cards
+- Ahora las imágenes son redimensionadas automáticamente para mostrar thumbnails y normales
+- Se agregaron dos opciones de configuración: Ancho de Thumbnails y Ancho de imágenes
+normales.Two option
+- Se agregaron opciones para editar y eliminar las imágenes por los autores de estas o por
+el super usuario.
+
+
+****************************
+NOTAS DE LA ACTUALIZACIÖN
+****************************
+Los usuario con permisos pueden subir imágenes al server, sin embargo no pueden asignar
+los distintos tmaños para descarga, esto solo puede hacerlo el administrador.
+
+En el siguiente release serán agregadas estas y otras características.
+
+****************************
+Para mayor información por favor contactanos en redmexico.com.mx
+Si deseas módulo personalizados contactanos.
+
+No olvides visitar proximamente XOOPS-MEXICO.NET el sitio de soporte mexicano para XOOPS.

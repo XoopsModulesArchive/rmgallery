@@ -1,0 +1,47 @@
+<table width="100%"  border="0" cellspacing="1" cellpadding="0">
+  <tr>
+    <td align="left" style="font-family: Verdana, Arial, sans-serif; font-size: 18px; font-weight: bolder; color:#000000; "><{$categoname}></td>
+    <td align="right" style="font-family: Verdana, Arial, sans-serif; font-size: 18px; font-weight: bolder; color:#000000; ">&nbsp; </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="left"><{$categodesc}></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="background-color:#000000; height: 1px;"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="foot"><{include file="db:rmgal_nav_top.html"}></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="background-color:#000000; height: 1px;"></td>
+  </tr>
+  <tr>
+    <td height="10" colspan="2"></td>
+  </tr>
+</table>
+<table width="100%"  border="0" cellspacing="1" cellpadding="0" class="outer">
+  <tr>
+    <th colspan="2"><{$lng_uploadimage}></th>
+  </tr>
+  <form action="images.php" method="post" enctype="multipart/form-data" name='frmUp'>
+    <tr align="left">
+      <td class="even">&nbsp;</td>
+      <td class="odd"><img src="<{$imgfile}>" border='1'></td>
+    </tr>
+	<tr align="left">
+      <td class="even"><{$lng_title}></td>
+      <td class="odd"><input value="<{$imgname}>" name="title" type="text" id="title" size="30"></td>
+    </tr>
+    <tr align="left">
+      <td class="even"><{$lng_description}></td>
+      <td class="odd"><textarea name="desc" cols="30" rows="4" id="desc"><{$imgdesc}></textarea></td>
+    </tr>
+    <tr align="left">
+      <td class="even">&nbsp;</td>
+      <td class="odd"><input type="submit" name="Submit" value="<{$lng_send}>">
+      <input name="idimg" type="hidden" id="idimg" value="<{$imgid}>"></td>
+    </tr>
+    <input type="hidden" name="op" value="save">
+    <input type="hidden" name="cat" value="<{$categoid}>">
+  </form>
+</table>

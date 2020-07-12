@@ -1,0 +1,8 @@
+<table width="100%"  border="0" cellpadding="2" cellspacing="1" class="outer">
+<{foreach item=image from=$block.images}>
+  <tr class="<{cycle values="even, odd"}>">
+    <td style="width: 20px;"><a href="<{$xoops_url}>/modules/rmgallery/images.php?idimg=<{$image.id}>"><img src="<{$xoops_url}>/modules/rmgallery/images/pic16.gif" border='0'></a></td>
+    <td><a href="<{$xoops_url}>/modules/rmgallery/images.php?idimg=<{$image.id}>" style="font-weight: normal;"><{$image.titulo}></a></td>
+  </tr>
+ <{/foreach}>
+</table>

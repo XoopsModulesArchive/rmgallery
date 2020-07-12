@@ -1,0 +1,26 @@
+<table width="100%"  border="0" cellpadding="0" cellspacing="1" class="outer">
+  <tr>
+    <td colspan='2' class="head"><{$lang_categos}></td>
+  </tr>
+  <tr>
+  <{assign var="i" value="0"}>
+  <{foreach item=catego from=$categos}>
+    <{if $i>1}>
+  </tr>
+		<{assign var="i" value="0"}>
+		<tr>
+	<{/if}>
+	<td width='50%' valign="top" class="odd">
+	<img src="<{$module_url}>/images/folder_cat.gif" border="0" align="absmiddle">
+	&nbsp;<strong><a href="<{$module_url}>/categos.php?idcat=<{$catego.id}>"><{$catego.titulo}></a></strong>
+	<{if $catego.new==1 }>
+		<img src="<{$module_url}>/images/new.gif" border="0" align="top">
+	<{/if}><br>
+	<span style="font-size: 10px;"><{$catego.desc}><br>
+	<{$lang_totalimages}> <strong><{$catego.images}></strong><br>
+	<{$catego.subcategos}>
+	</span></td>
+	<{assign var="i" value=$i+1}>
+  <{/foreach}>
+  </tr>
+</table>

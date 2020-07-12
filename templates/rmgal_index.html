@@ -1,0 +1,28 @@
+<table width="100%"  border="0" cellspacing="2" cellpadding="0">
+  <tr>
+    <td style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bolder;"><{$gallery_name}><hr /></td>
+  </tr>
+  <tr>
+    <td height="10"></td>
+  </tr>
+</table>
+<{include file="db:rmgal_categos.html"}>
+<br>
+<strong><{$total_images}></strong> <{$lang_images}> <{$lang_in}> <strong><{$total_categos}></strong> <{$lang_categos}>
+<br>
+<table width="100%"  border="0" cellspacing="1" cellpadding="0" class="outer">
+  <tr>
+    <th colspan="<{$cols}>"><{$lang_newimages}></th>
+  </tr>
+  <tr>
+  <{foreach item=pic from=$newpics}>
+    <td valign="top" align="left" class="<{cycle values="even,odd"}>">
+	<a href="images.php?idimg=<{$pic.id}>"><img src="<{$pic.file}>" style="border: 1px solid #000000;"></a><br>
+	<a href="images.php?idimg=<{$pic.id}>"><{$pic.titulo}></a><br>
+	(<a href="<{$xoops_url}>/userinfo.php?uid=<{$pic.posterid}>"><{$pic.poster}></a>)<br>
+	<a href="categos.php?idcat=<{$pic.categoid}>"><{$pic.catego}></a><br>
+	<span style="font-size: 10px;"><{$lang_comments}> <{$pic.comments}></span></td>
+  <{/foreach}>  </tr>
+</table>
+<br><br>
+<{include file="db:rmgal_navbar.html"}>

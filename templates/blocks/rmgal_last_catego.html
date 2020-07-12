@@ -1,0 +1,14 @@
+<table width="100%"  border="0" cellspacing="1" cellpadding="2" class="outer">
+  <{foreach item=catego from=$block.categoria}>
+  <tr>
+    <td class="even">
+	<{if $catego.image != "" }>
+		<a href="<{$xoops_url}>/modules/rmgallery/categos.php?idcat=<{$catego.id}>"><img src="<{$catego.image}>" border='0'></a>
+	<{/if}>
+	</td>
+    <td class="odd" align="left"><strong><a href="<{$xoops_url}>/modules/rmgallery/categos.php?idcat=<{$catego.id}>"><{$catego.titulo}></a></strong><br><{$catego.desc}>
+	<br><span style="font-size: 10px;"><{$catego.fecha}></span>
+	</td>
+  </tr>
+  <{/foreach}>
+</table>

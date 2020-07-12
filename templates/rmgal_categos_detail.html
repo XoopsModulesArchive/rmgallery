@@ -1,0 +1,62 @@
+<table width="100%"  border="0" cellspacing="1" cellpadding="0">
+  <tr>
+    <td align="left" style="font-family: Verdana, Arial, sans-serif; font-size: 18px; font-weight: bolder; color:#000000; "><{$categoname}></td>
+    <td align="right" style="font-family: Verdana, Arial, sans-serif; font-size: 18px; font-weight: bolder; color:#000000; ">&nbsp;
+	</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="left"><{$categodesc}></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="background-color:#000000; height: 1px;"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="foot"><{include file="db:rmgal_nav_top.html"}></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="background-color:#000000; height: 1px;"></td>
+  </tr>
+  <tr>
+    <td height="10" colspan="2"></td>
+  </tr>
+</table>
+
+<{if $subcategos_count>0}>
+<{include file="db:rmgal_categos.html"}>
+<{/if}>
+<br>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td align="right">
+<{$upload_link}>
+</td></tr>
+<tr><td align="left">
+<{$lang_found}>&nbsp;&nbsp;<{$lang_showing}></td>
+</tr>
+</table>
+<table width="100%"  cellpadding="0" cellspacing="0" class="outer">
+  <{assign var="i" value="0"}>
+  <tr> <{foreach item=pic from=$images}>
+		<{if $i >= $cols }>
+		 <{assign var="i" value="0"}>
+  </tr>
+		  <tr>
+		<{/if}>
+      <td valign="top" align="left" width="33%" class="<{cycle values="even,odd"}>">
+	  <a href="images.php?idimg=<{$pic.id}>"><img src="<{$pic.thumb}>" style="border: 1px solid #000000;"></a><br>
+          <a href="images.php?idimg=<{$pic.id}>"><{$pic.titulo}></a>
+		  <{if $pic.new == 1}>
+		  <img src="<{$module_url}>/images/new.gif" border="0" align="top">
+		  <{/if}>
+		  <br>
+      (<a href="<{$xoops_url}>/userinfo.php?uid=<{$pic.posterid}>"><{$pic.poster}></a>)<br>
+      <a href="categos.php?idcat=<{$pic.categoid}>" style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold; color: #000000;"><{$pic.catego}></a><br>
+      <span style="font-size: 10px;"><{$lang_comments}> <{$pic.comments}></span></td>
+	  <{assign var="i" value=$i+1}>
+  <{/foreach}> </tr>
+</table>
+<{foreach item=nav from=$pagnav}>
+		<a href="<{$nav.link}>" style="font-weight: normal; "><{$nav.text}></a>
+<{/foreach}>
+<br>
+<br>
+<{include file="db:rmgal_navbar.html"}>

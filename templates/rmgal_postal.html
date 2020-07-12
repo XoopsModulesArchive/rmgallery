@@ -1,0 +1,13 @@
+<table border="0" align="center" cellpadding="10" cellspacing="0" style="background-color: <?= $bgcolor ?>; border: 1px solid <?= $bordercolor ?>; padding: 6px;">
+  <tr>
+    <td rowspan="2" align="left" style="padding: 12px;"><center><img src="<?= $image_file ?>" style="border: 1px solid #000000;"></center><br><a href="images.php?idimg=<?= $image_id ?>" style="font-family: <?= $font ?>; font-size: 11px; font-weight: normal; color: <?= $fontcolor ?>;"><?php echo $image_title ?></a></td>
+    <td width="150" height="72" align="right" valign="top"><img src="images/timbre.gif" border="0"></td>
+  </tr>
+  <tr>
+    <td align="left" valign="top">
+	  <p style="font-family: <?= $font ?>; font-size: 18px; font-weight: bolder; color: <?= $fontcolor ?>;"><?= $desc ?> </p>
+    <p style="font-family: <?= $font ?>; font-size: 12px; font-weight: normal; color: <?= $fontcolor ?>;"><?= $msg ?></p>
+    <p style="font-family: <?= $font ?>; font-size: 11px; font-weight: bolder; color: <?= $fontcolor ?>;"><?= $sendername ?><br>
+	<a href="mailto:<?= $sendermail ?>" style="color: <?= $fontcolor ?>"><?= $sendermail ?></a></p></td>
+  </tr>
+</table>

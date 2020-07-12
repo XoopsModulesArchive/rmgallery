@@ -1,0 +1,36 @@
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%" align="left"><form action="categos.php" method="get" name="frmCat" id="frmCat">
+      <select name="idcat" id="idcat">
+		<{foreach item=catego from=$categostree}>
+			<{if $catego.selected==1}>
+				<option value="<{$catego.id}>" selected <{if $catego.type==0}>style="background-color: #F5F5F5;"<{/if}>><{$catego.titulo}></option>
+			<{else}>
+				<option value="<{$catego.id}>" <{if $catego.type==0}>style="background-color: #F5F5F5;"<{/if}>><{$catego.titulo}></option>
+			<{/if}>
+		<{/foreach}>
+      </select>
+      <input type="submit" name="Submit" value="<{$lang_go}>">
+    </form></td>
+    <td width="50%" align="right">
+		<form action="categos.php" method="get" name="frmItems">
+		<{$lang_items_page}> <select name="itemsxpag">
+			<{foreach item=item from=$itemsxpag}>
+				<option value="<{$item.num}>" <{$item.selected}>><{$item.num}></option>
+		<{/foreach}>
+		</select>
+		<input type="submit" name="Submit" value="<{$lang_go}>">
+		<input name="idcat" type="hidden" id="idcat" value="<{$categoid}>">
+		</form>
+	</td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+    <td align="right">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="right" class="even" colspan="2">
+	Powered By<strong> RM+Soft GS</strong><br>
+	CopyRight &copy; 2005. <a href="http://www.redmexico.com.mx">Red M&eacute;xico Soft</a>. </td>
+  </tr>
+</table>

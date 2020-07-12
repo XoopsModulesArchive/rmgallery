@@ -1,0 +1,136 @@
+<table width="100%"  border="0" cellspacing="1" cellpadding="0">
+  <tr>
+    <td align="left" style="font-family: Verdana, Arial, sans-serif; font-size: 18px; font-weight: bolder;"><{$imagetitle}>
+	<{if $imagenew==1 }>
+	<img src="images/new.gif" border="0">
+	<{/if}></td>
+  </tr>
+  <tr>
+    <td style="background-color:#000000; height: 1px;"></td>
+  </tr>
+  <tr>
+    <td class="even"><{include file="db:rmgal_nav_top.html"}></td>
+  </tr>
+  <tr>
+    <td style="background-color:#000000; height: 1px;"></td>
+  </tr>
+  <tr>
+    <td height="10"></td>
+  </tr>
+</table>
+<table  border="0" align="center" cellpadding="2" cellspacing="1">
+  <tr>
+    <td colspan="2" align="center"><img src="<{$image_file}>" style="border: 1px solid #000000;"></td>
+  </tr>
+  <tr>
+    <td width="50%" align="left" style="font-size: 10px; font-weight: normal;">
+	<{if $prev != ""}>
+		<{$lang_prev}><br>
+		<a href="images.php?idimg=<{$previd}>"><{$prev}></a>
+	<{/if}>
+	</td>
+    <td width="50%" align="right" style="font-size: 10px; font-weight: normal;">
+	<{if $next != ""}>
+		<{$lang_next}><br>
+		<a href="images.php?idimg=<{$nextid}>"><{$next}></a>
+	<{/if}>
+	</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+	<{$postal_link}> <{$delete_link}> <{$edit_link}>
+	</td>
+  </tr>
+  <tr>
+    <td height="10" colspan="2" align="center"></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><table width="100%"  border="0" cellspacing="0" cellpadding="2" style="border: 1px solid #000000;">
+      <tr>
+        <td colspan="2" align="left" class="head"><{$imagetitle}></td>
+      </tr>
+      <tr class="even">
+        <td>
+		<{$lang_desc}></td>
+        <td>
+		<{$imagedesc}>
+		</td>
+      </tr>
+      <tr class="odd">
+        <td align="left">
+		<{$lang_date}>
+		</td>
+        <td>
+		<{$fecha}>		</td>
+      </tr>
+      <tr class="even">
+        <td align="left">
+		<{$lang_hits}>
+		</td>
+        <td>
+		<{$hits}>		</td>
+      </tr>
+      <tr class="odd">
+        <td align="left">
+		<{$lang_comments}>
+		</td>
+        <td>
+		<{$image_comments}>		</td>
+      </tr>
+      <tr class="even">
+        <td align="left">
+		<{$lang_poster}>
+		</td>
+        <td>
+		<a href="<{$xoops_url}>/userinfo.php?uid=<{$posterid}>" style="font-weight: normal;"><{$poster}></a>		</td>
+      </tr>
+      <tr class="odd">
+        <td align="left">
+		<{$lang_catego}>
+		</td>
+        <td>
+		<a href="categos.php?idcat=<{$imagecatego_id}>" style="font-weight: normal;"><{$imagecatego}></a>		</td>
+      </tr>
+    </table>
+	<table width="100%" class="outer" cellspacing="1">
+	<tr>
+		<{foreach item=size from=$sizes}>
+		<td class="odd" align="center">
+			<{if $size.tipo==1 }>
+				<a href="<{$size.file}>" target="_blank"><img src="images/zip.gif" width="16" height="16" align="absmiddle" border="0"></a>
+			<{else}>
+				<a href="<{$size.file}>" target="_blank"><img src="images/image.gif" width="16" height="16" align="absmiddle" border="0"></a>
+			<{/if}>
+		  <a href="<{$size.file}>" target="_blank"><{$size.title}></a>
+		</td>
+		<{/foreach}>
+	</tr>
+	</table>
+	</td>
+  </tr>
+</table>
+<br>
+<table width="100%"  border="0" cellspacing="0" cellpadding="2" style="border: 1px solid #000000;">
+      <tr>
+        <td align="left" class="head"><{$lang_comments}></td>
+      </tr>
+      <tr>
+        <td>
+		<div style="text-align: center; padding: 3px; margin:3px;">
+  <{$commentsnav}>
+  <{$lang_notice}>
+</div>
+<div style="margin:3px; padding: 3px;">
+<!-- start comments loop -->
+<{if $comment_mode == "flat"}>
+  <{include file="db:system_comments_flat.html"}>
+<{elseif $comment_mode == "thread"}>
+  <{include file="db:system_comments_thread.html"}>
+<{elseif $comment_mode == "nest"}>
+  <{include file="db:system_comments_nest.html"}>
+<{/if}>
+<!-- end comments loop -->
+</div>
+		</td>
+  </tr>
+</table>

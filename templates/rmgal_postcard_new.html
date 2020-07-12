@@ -1,0 +1,107 @@
+<table width="100%"  border="0" cellspacing="3" cellpadding="0">
+  <tr>
+    <td align="left" style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bolder; color:#000000; ">
+	<{$lang_sendpostcard}>	</td>
+  </tr>
+  <tr>
+    <td bgcolor="#000000" style="height: 1px; background-color:#000000;"></td>
+  </tr>
+  <tr>
+    <td height="10"></td>
+  </tr>
+</table>
+<table border="0" align="center" cellpadding="4" cellspacing="0" style="border: 1px solid #000000;">
+  <tr>
+    <td bgcolor="#FFCC00" style="font-size: 12px; font-weight: bolder; color: #000000; border-bottom: 1px solid #000000;">
+	<{$image_title}>	</td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="#e4e4e4">
+	<img src="<{$image_file}>" style="border: 1px solid #000000;">	</td>
+  </tr>
+  <tr>
+    <td><form name="frmPost" method="post" action="postal.php"><table width="100%"  border="0" cellspacing="0" cellpadding="4">
+      <tr bgcolor="#f5f5f5">
+        <td align="left" valign="top" style="font-size: 11px; font-weight: normal; color:#003366;">
+		<{$lang_bgcolor}>
+		</td>
+        <td><{include file="db:rmgal_bgcolor.html"}></td>
+      </tr>
+      <tr bgcolor="#e4e4e4">
+        <td align="left" valign="top" style="font-size: 11px; font-weight: normal; color:#003366;">
+		<{$lang_bordercolor}>		</td>
+        <td><{include file="db:rmgal_border_color.html"}></td>
+      </tr>
+      <tr bgcolor="#f5f5f5">
+        <td align="left" valign="top" style="font-size: 11px; font-weight: normal; color:#003366;">
+		<{$lang_fontcolor}>
+		</td>
+        <td>
+		<{include file="db:rmgal_font_color.html"}>
+		</td>
+      </tr>
+      <tr bgcolor="#e4e4e4">
+        <td align="left" valign="top" style="font-size: 11px; font-weight: normal; color:#003366;">
+		<{$lang_fonttype}>
+		</td>
+        <td><p>
+          <label>
+          <input type="radio" name="font" value="Arial">
+  Arial</label>
+          <br>
+          <label>
+          <input type="radio" name="font" value="Verdana">
+  Verdana</label>
+          <br>
+          <label>
+          <input type="radio" name="font" value="Times New Roman">
+  Times New Roman</label>
+          <br>
+          <label>
+          <input type="radio" name="font" value="Helvetica">
+  Helvetica</label>
+          </p>
+		</td>
+      </tr>
+      <tr bgcolor="#FFCC00">
+        <td colspan="2" align="left" valign="top" style="font-size: 12px; font-weight: bolder; color: #000000; border-bottom: 1px solid #000000;">
+		<{$lang_sender}>
+		</td>
+        </tr>
+      <tr bgcolor="#e4e4e4">
+        <td align="left" valign="top" style="font-size: 11px; font-weight: normal; color:#003366;"><{$lang_sendername}></td>
+        <td><input name="sendername" type="text" id="sendername" value="<{$user_name}>" size="30"></td>
+      </tr>
+      <tr bgcolor="#f5f5f5">
+        <td align="left" valign="top" style="font-size: 11px; font-weight: normal; color:#003366;"><{$lang_senderemail}></td>
+        <td><input name="senderemail" type="text" id="senderemail" value="<{$user_email}>" size="30"></td>
+      </tr>
+      <tr bgcolor="#FFCC00">
+        <td colspan="2" align="left" valign="top" style="font-size: 12px; font-weight: bolder; color: #000000; border-bottom: 1px solid #000000;"> <{$lang_recipient}> </td>
+      </tr>
+      <tr bgcolor="#e4e4e4">
+        <td align="left" valign="top" style="font-size: 11px; font-weight: normal; color:#003366;"><{$lang_sendername}></td>
+        <td><input name="toname" type="text" id="toname" size="30"></td>
+      </tr>
+      <tr bgcolor="#f5f5f5">
+        <td align="left" valign="top" style="font-size: 11px; font-weight: normal; color:#003366;"><{$lang_senderemail}></td>
+        <td><input name="toemail" type="text" id="toemail" size="30"></td>
+      </tr>
+      <tr bgcolor="#e4e4e4">
+        <td align="left" valign="top" style="font-size: 11px; font-weight: normal; color:#003366;"><{$lang_shortdesc}></td>
+        <td><input name="desc" type="text" id="desc" size="40"></td>
+      </tr>
+      <tr bgcolor="#f5f5f5">
+        <td align="left" valign="top" style="font-size: 11px; font-weight: normal; color:#003366;"><{$lang_msgpostcard}></td>
+        <td><textarea name="msg" cols="38" rows="4" id="msg"></textarea>
+          <input name="idimg" type="hidden" id="idimg" value="<{$image_id}>">
+          <input name="preview" type="hidden" id="preview" value="1"></td>
+      </tr>
+      <tr>
+        <td align="left" valign="top" style="font-size: 11px; font-weight: normal; color:#003366;">&nbsp;</td>
+        <td><input type="submit" name="Submit" value="<{$lang_previewcard}>" style="font-size: 11px; background-color: #003399; font-weight: bolder; color: #FFFFFF;"></td>
+      </tr>
+    </table>
+    </form></td>
+  </tr>
+</table>

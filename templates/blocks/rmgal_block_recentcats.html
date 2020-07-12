@@ -1,0 +1,8 @@
+<table width="100%"  border="0" cellpadding="2" cellspacing="1" class='outer'>
+<{foreach item=catego from=$block.categos}>
+  <tr class="<{cycle values="even, odd"}>">
+    <td style="width: 20px;"><img src="<{$xoops_url}>/modules/rmgallery/images/catego16.gif" border='0'></td>
+    <td><a href="<{$xoops_url}>/modules/rmgallery/categos.php?idcat=<{$catego.id}>" style="font-weight: normal;"><{$catego.titulo}></a></td>
+  </tr>
+ <{/foreach}>
+</table>

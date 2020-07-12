@@ -1,0 +1,13 @@
+<table width="100%"  border="0" cellpadding="2" cellspacing="1" class='outer'>
+<{foreach item=pic from=$block.image}>
+  <tr>
+    <td align="center" class='even'><a href="<{$xoops_url}>/modules/rmgallery/images.php?idimg=<{$pic.id}>"><img src="<{$pic.thumb}>" border='0'></a></td>
+  </tr>
+  <tr>
+    <td class='odd' align="center">
+	<a href="<{$xoops_url}>/modules/rmgallery/images.php?idimg=<{$pic.id}>"><{$pic.titulo}></a><br>
+	<a href="<{$xoops_url}>/modules/rmgallery/categos.php?idcat=<{$pic.categoid}>" style="font-size: 9px; font-weight: normal;"><{$pic.catego}></a>
+	</td>
+  </tr>
+<{/foreach}>
+</table>
